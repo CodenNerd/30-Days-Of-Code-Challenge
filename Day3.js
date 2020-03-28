@@ -8,7 +8,7 @@ const monoTong = (string) => {
 
         count += temp.length;
     });
-
+    count = count.toString(); // this extraneous line --> to fulfil the expected output of type string
     return count;
 }
 
