@@ -45,4 +45,3 @@ const romaArabica = (arabicNum) => {
 // NOTE: Even though I wrote a bit longer code than my preference, I still ensured not to use any heavy duty function that could slow down the program's response
 // hence, the program is memory efficient... the length is only due to the underlying math logic 
 console.log(romaArabica(2050));
-
