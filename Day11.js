@@ -6,7 +6,7 @@ const manyHappyReturns = (birth_date) =>{
     const temp = new Date(today.getFullYear(), birth_month, birth_day);
 
     const target_date =  temp > today ? temp : new Date(today.getFullYear()+1, birth_month, birth_day) 
-    let days = -1;                          // -1 because testing with < makes the loop exceed the target by 1
+    let days = -1;                          // -1 because testing with > makes the loop exceed the target by 1
     for(let i = 0; i < 367; i++){           // 367 so that the loop always safely continues till the end esp. in case of a leap year which is 366 days
         if( new Date(today.getFullYear(), today.getMonth(), today.getDate() + i) > target_date) break;
         days++
