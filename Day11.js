@@ -14,7 +14,6 @@ const manyHappyReturns = (birth_date) =>{
         days++
     }
         
-    
     return days === 1 ? days + ' day' : days + ' days';
 }
 
