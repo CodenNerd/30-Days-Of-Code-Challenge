@@ -11,7 +11,7 @@ const manyHappyReturns = (birth_date) =>{
         if( new Date(today.getFullYear(), today.getMonth(), today.getDate() + i) > target_date) break;
         days++
     }
-    days = days === 365 ? 0 : days          // for a birthday that falls on today, you can choose to either count for the next birthday (365 or 366 days left) or say it's today (0 days left)
+    days = days >= 365 ? 0 : days          // for a birthday that falls on today, you can choose to either count for the next birthday (365 or 366 days left) or say it's today (0 days left)
     return days === 1 ? days + ' day' : days + ' days';
 }
 
