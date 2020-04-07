@@ -3,6 +3,7 @@ const express = require("express");
 const { json, urlencoded } = require("body-parser"); // declaring absolute paths before relative paths
 const Helper = require('./Helper');     // I chose to use a filesystem because using a db would have been too farfetched for a minimal implementation like this
 const expressRoads = require('./Routers/day-13');
+const dromeServer = require('./Routers/day-14');
 const app = express();
 /*
 [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
@@ -21,10 +22,8 @@ const app = express();
 */
 app.use(json());
 app.use(urlencoded({ extended: false }));
-app.use('/day-13', expressRoads);
-
-console.log(2);
-
+app.use('/day-13', expressRoads); // I had to version the APIs so that I don't keep redundant code in the codebase
+app.use('/day-14', dromeServer);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}`));
