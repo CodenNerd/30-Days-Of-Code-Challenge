@@ -1,4 +1,3 @@
-console.log(1);
 const express = require("express");
 const { json, urlencoded } = require("body-parser"); // declaring absolute paths before relative paths
 const Helper = require('./Helper');     // I chose to use a filesystem because using a db would have been too farfetched for a minimal implementation like this

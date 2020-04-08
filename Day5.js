@@ -5,13 +5,14 @@ const noReverse = (string, left_pos = 0, right_pos = 0) =>{
     if (string[left_pos]===' ')  return noReverse(string, ++left_pos, right_pos);  // check for space on the left pos
     if (string[right_pos]===' ') return noReverse(string, left_pos, --right_pos);   // on the right pos
   
-    if (string[left_pos]!==string[right_pos]) return console.log(false);
-    if (left_pos>=(str_len/2)) return console.log(true);
+    if (string[left_pos]!==string[right_pos]) return false;
+    if (left_pos>=(str_len/2)) return true;
     
-    noReverse(string, ++left_pos, --right_pos); //recursion 
+    return noReverse(string, ++left_pos, --right_pos); //recursion 
   }
   
   noReverse('was it a cat i saw');
   noReverse('nurses run');
   noReverse("codennerd");
   
+  module.exports = noReverse;
