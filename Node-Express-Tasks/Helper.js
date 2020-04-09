@@ -4,13 +4,13 @@ const isPalindrome = require('./../Day5');
 module.exports = {
     persistData(path,data, callback){
      fs.writeFile(path, data, (err)=>{
-        if (err) return false;
+        if (err) callback(false);
         callback(true);
      })
     },
     readData(path, callback){
        fs.readFile(path, (err, data) => {
-            if (err) return false;
+            if (err)  callback(false);
             callback(data);
         })
     },
