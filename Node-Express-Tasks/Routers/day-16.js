@@ -32,6 +32,7 @@ api.post('/signup', (req, res)=>{
         data.password = Helper.hashPassword(data.password);
         db.push(data)       // works like MongoDB [always push to existing db data]
         
+                                                    // encryption of db data for security
         Helper.persistData('./db/day-16_db.txt', Helper.encryptDBData(JSON.stringify(db)), saved=>{        // Hence, new signup data is always added to already existing data
         if (!saved) return res.status(500).send({'error': 'Could not save data'});      // in case of a server error
         return res.status(201).send({'message': 'Sign up completed!'})                    // success
