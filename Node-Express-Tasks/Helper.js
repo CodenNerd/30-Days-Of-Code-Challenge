@@ -21,7 +21,7 @@ module.exports = {
         const grade_points = [70, 60, 50, 45, 40, 0]  
         // I gave preference to using an array over an object because it is always ordered.
         let total_units = 0;
-       const sum = courses_array.reduce((total, current)=>{
+        const sum = courses_array.reduce((total, current)=>{
             const scoreIndex = grade_points.findIndex((elem) => parseInt(current.score) >= elem) // it gets only the first true number index
             const grade = 5 - scoreIndex;    // as if grade_points array is reversed
             
