@@ -12,3 +12,5 @@ console.log(yahooCheck('123@gmail'));
 console.log(yahooCheck('aatanda,dammy@gmail.com'));
 console.log(yahooCheck('aatanda.dammy@supermart.com4'));
 console.log(yahooCheck('codennerd@gmail.co.ukkkkkkkkkkkkkk'));
+
+module.exports = yahooCheck;
