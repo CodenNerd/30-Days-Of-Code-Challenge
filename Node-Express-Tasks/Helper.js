@@ -15,7 +15,7 @@ module.exports = {
         })
     },
     isPalindrome(string){
-      return isPalindrome(string);  // uses noReverse function from Day 5 task
+        return isPalindrome(string);  // uses noReverse function from Day 5 task
     },
     calculateSGPA(courses_array){
         const grade_points = [70, 60, 50, 45, 40, 0]  
