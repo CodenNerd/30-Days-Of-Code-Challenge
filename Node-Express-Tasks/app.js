@@ -4,6 +4,7 @@ const expressRoads = require('./Routers/day-13');
 const dromeServer = require('./Routers/day-14');
 const sGPACalculator = require('./Routers/day-15');
 const authAuth = require('./Routers/day-16');
+const authAuthII = require('./Routers/day-17');
 const app = express();
 /*
 [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
@@ -17,13 +18,12 @@ const app = express();
 [[[[ Day-14 ==> localhost:3000/day-14/getdata                                   ]]]]
 [[[[ Day-15 ==> localhost:3000/day-15/getdata                                   ]]]]
 [[[[ Day-16 ==> localhost:3000/day-16/signup                                    ]]]]
+[[[[ Day-17 ==> localhost:3000/day-17/auth/signup                               ]]]]
+[[[[ Day-17 ==> localhost:3000/day-17/auth/login                                ]]]]
+[[[[ Day-17 ==> localhost:3000/day-17/getuser                                   ]]]]
 [[[[ -------------------------------IMPORTANT NOTICE--------------------------- ]]]]
-[[[[ Because I am using a filesystem as db, I have encryted the content of the  ]]]]
-[[[[ day-16_db.txt file. To run the server, you need to include a dot env file  ]]]]
-[[[[ and set your own DB_SECRET key. This is necessary so as to secure the      ]]]]
-[[[[ content of the db from anyone who gets access to the db files. To          ]]]]
-[[[[ what I'm saying more clearly, just take a look at ./db/day-16_db.txt file  ]]]]
-[[[[ after signing up                                                           ]]]]
+[[[[ Observe that I have added a /auth route to login and signup. Don't forget  ]]]]
+[[[[ to add a .env file and write a SECRET=secret_of_your_choice                ]]]]
 [[[[ -------------------------------------------------------------------------- ]]]]
 [[[[ 09/April/2020                                                              ]]]]
 [[[[ Stay Safe, Stay Home --CodenNerd                                           ]]]]
@@ -36,6 +36,7 @@ app.use('/day-13', expressRoads); // I had to version the APIs so that I don't k
 app.use('/day-14', dromeServer);
 app.use('/day-15', sGPACalculator);
 app.use('/day-16', authAuth);
+app.use('/day-17', authAuthII);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}`));
