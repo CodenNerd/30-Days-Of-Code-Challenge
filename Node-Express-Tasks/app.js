@@ -5,6 +5,7 @@ const dromeServer = require('./Routers/day-14');
 const sGPACalculator = require('./Routers/day-15');
 const authAuth = require('./Routers/day-16');
 const authAuthII = require('./Routers/day-17');
+const mongoBoss = require('./Routers/day-18');
 const app = express();
 /*
 [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
@@ -23,7 +24,9 @@ const app = express();
 [[[[ Day-17 ==> localhost:3000/day-17/getuser                                   ]]]]
 [[[[ -------------------------------IMPORTANT NOTICE--------------------------- ]]]]
 [[[[ Observe that I have added a /auth route to login and signup. Don't forget  ]]]]
-[[[[ to add a .env file and write a SECRET=secret_of_your_choice                ]]]]
+[[[[ to add a .env file and write a SECRET=secret_of_your_choice. I have        ]]]]
+[[[[ retained the files from previous challenges in my code base only for       ]]]]
+[[[[ the records.                                                               ]]]]
 [[[[ -------------------------------------------------------------------------- ]]]]
 [[[[ 09/April/2020                                                              ]]]]
 [[[[ Stay Safe, Stay Home --CodenNerd                                           ]]]]
@@ -37,6 +40,7 @@ app.use('/day-14', dromeServer);
 app.use('/day-15', sGPACalculator);
 app.use('/day-16', authAuth);
 app.use('/day-17', authAuthII);
+app.use('/day-18', mongoBoss);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}`));
