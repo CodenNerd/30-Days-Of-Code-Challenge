@@ -6,6 +6,7 @@ const sGPACalculator = require('./Routers/day-15');
 const authAuth = require('./Routers/day-16');
 const authAuthII = require('./Routers/day-17');
 const mongoBoss = require('./Routers/day-18');
+const restMotion = require('./Routers/day-19');
 const app = express();
 /*
 [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
@@ -41,6 +42,7 @@ app.use('/day-15', sGPACalculator);
 app.use('/day-16', authAuth);
 app.use('/day-17', authAuthII);
 app.use('/day-18', mongoBoss);
+app.use('/day-19', restMotion);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}`));

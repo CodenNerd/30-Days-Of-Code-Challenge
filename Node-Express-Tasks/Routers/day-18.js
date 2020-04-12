@@ -1,7 +1,7 @@
 const { Router, json } = require('express');
 const Helper = require('../Helper');    
 const Auth = require('./../Middleware/Auth');
-require('./../db/day-18_db');  // just call the db connection file 
+require('../db/_db');  // just call the db connection file 
 
 const User = require('./../Model/user');
 const api = Router();
