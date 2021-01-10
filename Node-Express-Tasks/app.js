@@ -1,14 +1,8 @@
 const express = require("express");
 const { json, urlencoded } = require("body-parser"); // declaring absolute paths before relative paths
-const expressRoads = require('./Routers/day-13');
-const dromeServer = require('./Routers/day-14');
-const sGPACalculator = require('./Routers/day-15');
-const authAuth = require('./Routers/day-16');
-const authAuthII = require('./Routers/day-17');
-const mongoBoss = require('./Routers/day-18');
-const restMotion = require('./Routers/day-19');
 const softroleum = require('./Routers/softroleum/items');
 const app = express();
+const cors = require('cors');
 /*
 [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
@@ -35,6 +29,7 @@ const app = express();
 [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 */
+app.use(cors())
 app.use(json());
 app.use(urlencoded({ extended: false }));
 // app.use('/day-13', expressRoads); // I had to version the APIs so that I don't keep redundant code in the codebase
