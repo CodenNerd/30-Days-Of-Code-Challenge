@@ -7,6 +7,7 @@ const authAuth = require('./Routers/day-16');
 const authAuthII = require('./Routers/day-17');
 const mongoBoss = require('./Routers/day-18');
 const restMotion = require('./Routers/day-19');
+const softroleum = require('./Routers/softroleum/items');
 const app = express();
 /*
 [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
@@ -36,15 +37,20 @@ const app = express();
 */
 app.use(json());
 app.use(urlencoded({ extended: false }));
-app.use('/day-13', expressRoads); // I had to version the APIs so that I don't keep redundant code in the codebase
-app.use('/day-14', dromeServer);
-app.use('/day-15', sGPACalculator);
-app.use('/day-16', authAuth);
-app.use('/day-17', authAuthII);
-app.use('/day-18', mongoBoss);
-app.use('/day-19', restMotion);
+// app.use('/day-13', expressRoads); // I had to version the APIs so that I don't keep redundant code in the codebase
+// app.use('/day-14', dromeServer);
+// app.use('/day-15', sGPACalculator);
+// app.use('/day-16', authAuth);
+// app.use('/day-17', authAuthII);
+// app.use('/day-18', mongoBoss);
+// app.use('/day-19', restMotion);
+app.use('/softroleum/core', softroleum);
 
-const port = process.env.PORT || 3000;
+app.get('/', (req, res)=>{
+    return res.send({message: 'nice'})
+})
+
+const port = process.env.PORT || 3002;
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 module.exports = app;
